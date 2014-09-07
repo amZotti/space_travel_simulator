@@ -1,24 +1,25 @@
 class MobileSuitFactory
-  def self.create(name, game)
+  def self.create(name)
     case name
     when "leo"
-      Leo.new(game)
+      Leo.new
     when "taurus"
-      Taurus.new(game)
+      Taurus.new
     when "aeries"
-      Aeries.new(game)
+      Aeries.new
     end
   end
 end
 
 class Leo
-  def initialize(game)
+  def initialize
     @max_speed = 100
     @radar_range = 20
     @name = "Leo"
-    @area_id = game.new_area_id
+    @area_id = Game.instance.new_area_id
+    @contains = [Cockpit.new(self)]
   end
-  attr_reader :max_speed, :reader_range, :name, :area_id
+  attr_reader :max_speed, :reader_range, :name, :area_id, :contains
 end
 
 class Taurus
@@ -26,9 +27,10 @@ class Taurus
     @max_speed = 250
     @radar_range = 30
     @name = "Taurus"
-    @area_id = game.new_area_id
+    @area_id = Game.instance.new_area_id
+    @contains = [Cockpit.new(self)]
   end
-  attr_reader :max_speed, :reader_range, :name, :area_id
+  attr_reader :max_speed, :reader_range, :name, :area_id, :contains
 end
 
 class Aeries
@@ -36,7 +38,8 @@ class Aeries
     @max_speed = 150
     @radar_range = 30
     @name = "Aeries"
-    @area_id = game.new_area_id
+    @area_id = Game.instance.new_area_id
+    @contains = [Cockpit.new(self)]
   end
-  attr_reader :max_speed, :reader_range, :name, :area_id
+  attr_reader :max_speed, :reader_range, :name, :area_id, :contains
 end
