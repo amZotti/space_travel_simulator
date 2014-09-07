@@ -7,5 +7,6 @@ require './mobile_suit_factory'
 require './ship_factory'
 
 spacecruiser = AbstractVesselFactory.create_ship("spacecruiser")
-taurus = AbstractVesselFactory.create_mobile_suit("taurus")
-puts taurus
+#def parseLocation
+#  spacecruiser.contains[0].obvious_exits.each { | direction, room | puts direction }
+#end

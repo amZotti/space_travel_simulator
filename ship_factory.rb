@@ -1,10 +1,9 @@
 class ShipFactory
-  attr_reader :max_speed, :radar_range, :name, :area_id, :contains
+  attr_reader :max_speed, :radar_range, :name, :contains
   def initialize(max_speed, radar_range, name, contains)
     @max_speed = max_speed
     @radar_range = radar_range
     @name = name
-    @area_id = GameInformation.instance.new_area_id
     @contains = contains
   end
 

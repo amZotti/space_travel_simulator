@@ -1,10 +1,9 @@
 class MobileSuitFactory
-  attr_reader :max_speed, :reader_range, :name, :area_id, :contains
+  attr_reader :max_speed, :reader_range, :name, :contains
   def initialize(max_speed, radar_range, name)
     @max_speed = max_speed
     @radar_range = radar_range
     @name = name
-    @area_id = GameInformation.instance.new_area_id
     @contains = [Cockpit.new(self)]
   end
 

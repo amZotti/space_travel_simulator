@@ -1,9 +1,8 @@
 class Room
-  attr_reader :belongs_to, :obvious_exits, :area_id
+  attr_reader :belongs_to, :obvious_exits
   attr_accessor :obvious_exits
   def initialize(ship, description)
     @belongs_to = ship
-    @area_id = ship.area_id
     @obvious_exits = {}
     @description = description
   end
