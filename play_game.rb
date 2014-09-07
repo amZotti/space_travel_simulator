@@ -1,11 +1,11 @@
 require 'singleton'
-require './game'
+require './game_information'
 require './player'
-require './room_builder'
-require './cockpit'
+require './rooms'
 require './abstract_vessel_factory'
 require './mobile_suit_factory'
 require './ship_factory'
-leo = AbstractVesselFactory.create_mobile_suit('leo')
-puts leo.contains
 
+spacecruiser = AbstractVesselFactory.create_ship("spacecruiser")
+taurus = AbstractVesselFactory.create_mobile_suit("taurus")
+puts taurus
